@@ -1,0 +1,43 @@
+{
+  "blogs": [
+    {
+      "title": "second blog ever",
+      "body": "bbhqkbkqerabdakbkjebfaefk",
+      "author": "mario",
+      "id": 2
+    },
+    {
+      "title": "ABBA",
+      "body": "DANCING QUEEN!",
+      "author": "othman",
+      "id": 3
+    },
+    {
+      "title": "FROM BACKEND",
+      "body": "HI FROM BACKEND!",
+      "author": "othman",
+      "id": 123
+    },
+    {
+      "title": "This is the third blog !",
+      "body": "KOLCHI IGUL HA",
+      "author": "othman",
+      "id": 4
+    },
+    {
+      "id": 7
+    },
+    {
+      "title": "hamza berkchi",
+      "body": "a ",
+      "author": "ayoub",
+      "id": 8
+    },
+    {
+      "title": "test",
+      "body": "test body",
+      "author": "anas",
+      "id": "49c89315-70d8-4912-bf73-e0e3d70793de"
+    }
+  ]
+}

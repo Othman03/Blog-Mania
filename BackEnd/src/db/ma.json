@@ -1,0 +1,14 @@
+{
+  "users": [
+    { "id": "1", "username": "othman", "role": "admin", "password": "123" },
+    { "id": "2", "username": "anas", "role": "client", "password": "123" },
+    { "id": "3", "username": "mario", "role": "client", "password": "123" },
+    { "id": "4", "username": "ayoub", "role": "client", "password": "123" },
+    {
+      "id": "c1f05f42-c80d-4bcd-82fc-4185d669bad0",
+      "username": "ccsc",
+      "role": "client",
+      "password": "222"
+    }
+  ]
+}
