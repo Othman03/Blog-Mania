@@ -55,7 +55,7 @@ export default function (app) {
     const body = req.body;
     console.log(body);
 
-    const otherBlogs = db.blogs.filter((blog) => String(blog.id) != String(id));
+    const otherBlogs = db.blogs.filter((blog) => blog.id != id);
 
     const updatedBlog = {
       title: body.title,
