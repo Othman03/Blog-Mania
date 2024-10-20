@@ -3,7 +3,6 @@ import useFetch from "../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
-import axios from "axios";
 
 const BlogEdit = () => {
   const { id } = useParams();
@@ -19,6 +18,7 @@ const BlogEdit = () => {
 
   const navigate = useNavigate();
 
+  // Populate form fields when blog data is fetched
   useEffect(() => {
     if (blog) {
       setTitle(blog.title);
@@ -28,25 +28,33 @@ const BlogEdit = () => {
     }
   }, [blog]);
 
-  const handleSubmit = (e) => {
+  // Handle form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const updatedBlog = { title, body, author, category };
-    console.log(updatedBlog);
 
-    axios
-      .put(`http://localhost:8090/blogs/${id}`, updatedBlog, {
+    try {
+      const response = await fetch(`http://localhost:8090/blogs/${id}`, {
+        method: "PUT",
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `bearer ${token}`,
           "Content-Type": "application/json",
         },
-      })
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
+        body: JSON.stringify(updatedBlog), // Correctly stringify the body
       });
+
+      if (!response.ok) {
+        throw new Error("Failed to update the blog");
+      }
+
+      const data = await response.json();
+      console.log("Blog updated:", data);
+
+      navigate("/blogs/" + id); // Navigate to the updated blog
+    } catch (error) {
+      console.error("Error updating blog:", error);
+    }
   };
 
   return (
